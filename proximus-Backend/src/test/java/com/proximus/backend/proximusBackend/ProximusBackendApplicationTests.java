@@ -42,7 +42,27 @@ class ProximusBackendApplicationTests {
 	@Test
 	void getSizeOfListCanalsGTest() {
        when(canalService.getAllCanals()).thenReturn(canals);
-       assertEquals(canalService.getAllCanals().size(),5);
+       assertEquals(canalService.getAllCanals().size(),2);
+	}
+	
+	@Test
+	void validateCanalTest() {
+	   canals.get(0).setAvailability(true);
+	   when(canalService.getAllCanals()).thenReturn(canals);
+	   when(canalService.validateCanal(canals.get(0))).thenReturn(canals.get(0));
+	   assertEquals(canalService.validateCanal(canals.get(0)).isAvailability(), true);
+	   
+
+	}
+	
+	@Test
+	void disValidateCanalTest() {
+	   canals.get(1).setAvailability(false);
+	   when(canalService.getAllCanals()).thenReturn(canals);
+	   when(canalService.disValidateCanal(canals.get(1))).thenReturn(canals.get(1));
+	   assertEquals(canalService.disValidateCanal(canals.get(1)).isAvailability(), false);
+	   
+
 	}
 	
 	

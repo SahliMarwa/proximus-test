@@ -1,6 +1,10 @@
 package service;
 
 import java.util.List;
+
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
 import model.Canal;
 
 public class CanalServiceImpl implements CanalService {
