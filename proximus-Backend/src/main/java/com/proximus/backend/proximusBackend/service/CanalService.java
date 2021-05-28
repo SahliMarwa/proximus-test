@@ -1,11 +1,10 @@
-package service;
+package com.proximus.backend.proximusBackend.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-import model.Canal;
+import com.proximus.backend.proximusBackend.model.Canal;
 
-@Service
 public interface CanalService {
 	List<Canal> getAllCanals();
 	Canal validateCanal(Canal canal);

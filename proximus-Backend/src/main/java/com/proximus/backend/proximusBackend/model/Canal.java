@@ -1,11 +1,16 @@
-package model;
+package com.proximus.backend.proximusBackend.model;
 
-import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Getter;
 import lombok.Setter;
 
-public class Canal implements Serializable {
+public class Canal {
+
+	public Canal() {
+		super();
+	}
 
 	public Canal(Long id, String name, boolean availability) {
 		super();
@@ -19,9 +24,13 @@ public class Canal implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	@JsonProperty(value="id")
 	Long id;
+	
+	@JsonProperty(value="name")
 	String name;
 	// boolean to verify if canal encrypted or not
+	@JsonProperty(value="availability")
 	boolean availability;
 
 	public Long getId() {
